@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+.theme1{
+    /* #### Backgrounds */
+
+    --main-bg: hsl(222, 26%, 31%);
+    --toggle-bg:hsl(223, 31%, 20%);
+    --keypad-bg: hsl(223, 31%, 20%);
+    --screen-bg: hsl(224, 36%, 15%);
+    --main-color:#EAE3DB;
+    
+    --toggle: hsl(6, 63%, 50%);
+
+    /* #### Keys */
+   
+    --key-bg: #EAE3DB;
+    --key-shadow: #B3A195;
+
+    /* rest and  del keys*/
+    --key-reset-border:#414E72;
+    --key-reset-bg: #647299;
+    --key-reset-color: #EAE3DA;
+
+   /* equal Key */
+    --key-equals-bg: #D13F30;
+    --key-equals-border: #8F2316;
+   
+    
+    /* #### Text */
+    
+    --text: hsl(221, 14%, 31%);
+    
+}
+
+.theme2{
+  /* #### Backgrounds */
+
+  --main-bg: #E6E6E6;
+  --toggle-bg:#D3CDCD;
+  --keypad-bg: #D3CDCD;
+  --screen-bg: #EEEEEE;
+  --main-color:#393833;
+  
+  --toggle: #C05704;
+
+  /* #### Keys */
+ 
+  --key-bg: #E5E4E0;
+  --key-shadow: #A79D90;
+
+  /* rest and  del keys*/
+  --key-reset-border:#17575F;
+  --key-reset-bg: #388187;
+  --key-reset-color: #FEFFFF;
+
+ /* equal Key */
+  --key-equals-bg: #C85401;
+  --key-equals-border: #7E3300;
+ 
+  
+  /* #### Text */
+  
+  --text: #373631;
+
+}
+
+.theme3{
+/* #### Backgrounds */
+
+--main-bg: #17062A;
+--toggle-bg:#1E0837;
+--keypad-bg: #1E0836;
+--screen-bg: #1E0836;
+--main-color: #FFE859;
+
+--toggle: #04DED3 ;
+
+/* #### Keys */
+
+--key-bg:  #331B4D;
+--key-shadow: #85229D;
+
+/* rest and  del keys*/
+--key-reset-border: #B91EEC ;
+--key-reset-bg: #560779 ;
+--key-reset-color: #F3E4F4 ;
+
+/* equal Key */
+--key-equals-bg:  #00DECF;
+--key-equals-border: #6EFAF1;
+
+
+/* #### Text */
+
+--text: #FBE263 ;
+
+}
+
+body{
+    padding:0;
+    box-sizing:border-box;
+    background-color:var(--main-bg);
+    color:var(--main-color);
+    font-family: "Spartan";
+}
+main{
+    width:30%;
+    margin:auto;
+    height:80%;
+    padding:1em;;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+}
+
+.theme-selector{
+    display:flex;
+    font-size:.6em;
+}
+
+.theme-selector p{
+    text-transform: uppercase;
+    padding-top:7px;
+    padding-right:7px;
+}
+
+
+.selector{
+    display:flex;
+    flex-direction:column;
+    align-self: flex-start;
+}
+.selector span{
+    
+    word-spacing: 1.3em;
+    padding:0 2px;
+}
+.theme-selector .selector input{
+    width:50px;
+    -webkit-appearance: none;
+    height: 15px;
+    background: var(--toggle-bg);
+    outline: none;
+    border-radius: 10px;;
+
+}
+.theme-selector .selector input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 8px;
+    height: 8px;
+    background-color: var(--toggle);
+    border-radius: 50px;
+    cursor: pointer;
+    padding:1px;
+}
+
+
+.display{
+    background-color: var(--screen-bg);
+    padding:1.5px 10px;
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+}
+
+.display h1{
+    word-break: break-all;
+}
+
+.smaller{
+    font-size: 1.5rem;
+}
+
+.smallest{
+    font-size: 1rem;
+}
+.regular{
+    font-size:2rem;
+}
+
+
+
+.keypad{
+    background-color: var(--keypad-bg);
+    padding: 10px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    margin-top:15px;
+
+    display:grid;
+    height:50vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 5;
+    gap:10px;
+}
+
+.keypad button{
+    border:none;
+    font-size:1.2rem;
+    font-weight: bold;
+    color:var(--text);
+    background-color: var(--key-bg);
+    border-bottom:3px solid var(--key-shadow);
+    border-radius: 5px;
+    cursor:pointer;
+    
+
+}
+
+.keypad .btn-del{
+    background-color: var(--key-reset-bg);
+    color:var(--key-reset-color);
+    text-transform: uppercase;
+    border-bottom:3px solid var(--key-reset-border);
+    font-size: 1rem;
+}
+
+.keypad .btn-reset{
+    grid-column: 1 / span 2;
+    background-color: var(--key-reset-bg);
+    color: var(--key-reset-color);
+    text-transform: uppercase;
+    border-bottom:3px solid var(--key-reset-border);
+    font-size: 1rem;
+}
+
+.keypad .btn-equals{
+    grid-column: 3 / span 2;
+    background-color: var(--key-equals-bg);
+    border-bottom: 3px solid var(--key-equals-border);
+    color: var(--key-reset-color);
+    font-size:1rem;
+}
+
+@media only screen and (max-width: 650px){
+
+    main{
+        width:70%;
+    }
+
+}
