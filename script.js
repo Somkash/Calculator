@@ -136,7 +136,8 @@ window.addEventListener("keydown", (e) => {
 })
 
 // Theme Selector Event
-themeSelector.addEventListener("click", function(){
+themeSelector.addEventListener("change", function(){
+    console.log("themeSelector click")
     let theme = themeSelector.value;
     switch(theme) {
         case '1':
